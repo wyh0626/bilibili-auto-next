@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        body {
+            width: 300px;
+            padding: 20px;
+            font-family: 'Microsoft YaHei', sans-serif;
+        }
+        .header {
+            text-align: center;
+            color: #00a1d6;
+            margin-bottom: 20px;
+        }
+        .setting-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .time-input-group {
+            display: flex;
+            gap: 5px;
+            align-items: center;
+        }
+        .time-input {
+            width: 60px;
+            text-align: center;
+        }
+        .time-label {
+            font-size: 12px;
+            color: #666;
+        }
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .checkbox-group input[type="checkbox"] {
+            width: auto;
+            margin: 0;
+        }
+        .checkbox-group label {
+            margin: 0;
+            font-weight: normal;
+            display: flex;
+            align-items: center;
+        }
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        button {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .btn-primary {
+            background-color: #00a1d6;
+            color: white;
+        }
+        .btn-danger {
+            background-color: #ff6b81;
+            color: white;
+        }
+        .btn-success {
+            background-color: #2ed573;
+            color: white;
+        }
+        .status {
+            text-align: center;
+            margin-top: 10px;
+            padding: 5px;
+            border-radius: 4px;
+        }
+        .status.enabled {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .status.disabled {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+    </style>
+</head>
+<body>
+    <h3 class="header">🎬 B站自动跳P助手</h3>
+    
+    <div class="setting-group">
+        <label>跳转时间点:</label>
+        <div class="time-input-group">
+            <input type="number" id="jumpHours" class="time-input" placeholder="0" min="0" max="23" value="0">
+            <span class="time-label">时</span>
+            <input type="number" id="jumpMinutes" class="time-input" placeholder="0" min="0" max="59" value="0">
+            <span class="time-label">分</span>
+            <input type="number" id="jumpSeconds" class="time-input" placeholder="0" min="0" max="59" value="0">
+            <span class="time-label">秒</span>
+        </div>
+    </div>
+    
+    <div class="setting-group">
+        <label for="jumpMode">跳转模式:</label>
+        <select id="jumpMode">
+            <option value="fixed">固定时间点</option>
+            <option value="beforeEnd">视频结束前</option>
+        </select>
+    </div>
+    
+    <div class="setting-group">
+        <div class="checkbox-group">
+            <input type="checkbox" id="enableNotification">
+            <label for="enableNotification">跳转时显示提醒</label>
+        </div>
+    </div>
+    
+    <div class="button-group">
+        <button id="enableBtn" class="btn-primary">启用</button>
+        <button id="disableBtn" class="btn-danger">停用</button>
+    </div>
+    
+    <div class="button-group">
+        <button id="testBtn" class="btn-success">测试跳转</button>
+    </div>
+    
+    <div id="status" class="status disabled">状态: 已停用</div>
+    
+    <script src="popup.js"></script>
+</body>
+</html>

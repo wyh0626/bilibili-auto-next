@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "B站自动跳P助手",
+  "version": "1.0.0",
+  "description": "智能检测B站多P视频，支持自定义时间点自动跳转到下一集，提升观看体验",
+  "author": "wyh0626",
+  "homepage_url": "https://github.com/wyh0626/bilibili-auto-next",
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "host_permissions": [
+    "*://*.bilibili.com/*"
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.bilibili.com/video/*"],
+      "js": ["content.js"],
+      "css": ["styles.css"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "B站自动跳P设置",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  }
+}

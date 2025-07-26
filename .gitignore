@@ -1,0 +1,19 @@
+# 排除压缩包
+*.zip
+*.rar
+*.7z
+*.tar.gz
+
+# 排除系统文件
+.DS_Store
+Thumbs.db
+
+# 排除编辑器文件
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 排除临时文件
+*.tmp
+*.temp

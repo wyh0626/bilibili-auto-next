@@ -1,0 +1,32 @@
+/* B站自动跳P助手样式 */
+.bilibili-auto-next-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #00a1d6;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(0, 161, 214, 0.3);
+    z-index: 10000;
+    animation: slideInRight 0.3s ease-out;
+    font-family: 'Microsoft YaHei', sans-serif;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* 确保通知在B站页面上方显示 */
+.bilibili-auto-next-notification {
+    z-index: 99999 !important;
+}
